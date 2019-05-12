@@ -38,17 +38,20 @@ Arduino IDEのデフォルト設定では、ESP8266ボードはサポートされていません。
 [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
 
 # Usage
-## 1.Build the circuit as the fllowing figure.
+**1.Build the circuit as the fllowing figure.**
+
 以下のように回路を組みます。
 
 ![circuit_diagram](https://github.com/shiguregaki/sample/blob/master/01_ESP8266_blink_LED_by_TIMER0/docs/circuit_diagram_frizing.PNG)
 
 
-## 2.Write this code on the ESP8266 board with Arduino IDE.
+**2.Write this code on the ESP8266 board with Arduino IDE.**
+
 Arduino IDEでESP8266基板に本コードを書き込みます。
 
 
-## 3.If you turn on the power of the ESP8266 board, the LED will blink automatically.
+**3.If you turn on the power of the ESP8266 board, the LED will blink automatically.**
+
 ESP8266基板の電源を入れれば、自動でLEDがチカチカします。
 
 # Licence
