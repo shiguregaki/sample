@@ -15,7 +15,7 @@ which it is known in RC industry, on arudino wifi module(ESP8266).
 
 There are many devices which generate PPM signal.
 I used [FrSky 8CH PWM PPM SBUS Micro Receiver](http://helimonster.jp/?pid=116238271) for checking.
-If you use it, you need to transrater, such as FrSky DHT DFT DJT, becouse it is receiver.
+If you use it, you need to transmitter, such as FrSky DHT DFT DJT, becouse it is receiver.
 
 For example:
 
@@ -42,11 +42,13 @@ Therefore, it is necessary to import **ESP8266 core for Arduino** into Arduino I
 
 # Usage
 **1.Build the circuit as the fllowing figure.**
+
 ![wiring_diagram](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/wiring_diagram.png)
 
 The output pin can be changed.If you change output pin, change **PPM_READE_PIN** of define value in this program.
 
-**2.Confirm PPM signal specifications, UP pulse or DOWN pulse.
+
+**2. Confirm PPM signal specifications, UP pulse or DOWN pulse.**
 The PPM signal has the following two patterns, so Confirm one of them.
 
 ![pulse_type](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/pulse_type.png)
@@ -55,6 +57,7 @@ If you write [ppm_pulse_check_by_serial_plotter.ino](https://github.com/shigureg
 to ESP8266 board, you can confirm pulse type on serial plotter.
 
 If you confirm ppm pulse type, change **TYPE_OF_PULSE_IS_RISING** of define value in this program.
+
 
 **3.Write this code on the ESP8266 board with Arduino IDE.**
 
@@ -66,9 +69,12 @@ If you confirm ppm pulse type, change **TYPE_OF_PULSE_IS_RISING** of define valu
 # Author
 [shiguregaki](https://github.com/shiguregaki)
 
+ 
 
-====
+ 
+
 (日本語版)
+
 このコードはarudino wifiモジュールのESP8266でPPM値を読み取るためのものです。
 PPM値の表示はArduinoのシリアルモニタで行います。
 
@@ -84,6 +90,13 @@ PPMを発生させるデバイスはたくさんあると思います。
 私は、[FrSky 8CH PWM PPM SBUS Micro Receiver](http://helimonster.jp/?pid=116238271)を使用しました。
 これは受信機なので、別途送信機(FrSky DHT DFT DJTなど)が必要となります。
 
+## arudino wifi module(ESP8266)
+日本では以下のボードで動作すると思います。
+
+- [電子太郎 ESP-WROOM-02開発ボード 2.4 GHz Wi-Fiモジュール MicroUSB](https://www.amazon.co.jp/gp/product/B071DY11SB/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B071DY11SB&linkCode=as2&tag=shiguregaki02-22&linkId=131ae4b9a00ef3b7517980a81ed41d91)  
+- [ＥＳＰ－ＷＲＯＯＭ－０２開発ボード](http://akizukidenshi.com/catalog/g/gK-12236/)
+- [ESPr Developer（ESP-WROOM-02開発ボード）](https://www.switch-science.com/catalog/2500/)
+
 ## Arduino IDE
 開発用のPCにArduino IDEをインストールします。
 
@@ -97,11 +110,14 @@ Arduino IDEのデフォルト設定では、ESP8266ボードはサポートされていません。
 
 # 使い方
 **1.以下のように回路を組みます。**
+
 ![wiring_diagram](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/wiring_diagram.png)
 
 outputのピンは変更可能です。プログラム内の**PPM_READE_PIN**の定義値を変更してください。
 
+
 **2.PPM信号の仕様を確認(UP pulse, DOWN pulse)**
+
 PPM信号には以下の2パターンがあるので、どちらかを確認します。
 
 ![pulse_type](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/pulse_type.png)
@@ -110,6 +126,7 @@ PPM信号には以下の2パターンがあるので、どちらかを確認します。
 を書き込めば、シリアルプロッタでパルスを表示できます。
 
 PPM信号の種類が分かったら、プログラム内の**TYPE_OF_PULSE_IS_RISING**の定義値を変更してください。
+
 
 **3.Arduino IDEでESP8266基板に本コードを書き込みます。**
 
