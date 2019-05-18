@@ -41,14 +41,16 @@ Therefore, it is necessary to import **ESP8266 core for Arduino** into Arduino I
 [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
 
 # Usage
-**1.Build the circuit as the fllowing figure.**
+**1. Build the circuit as the fllowing figure.**
 
 ![wiring_diagram](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/wiring_diagram.png)
 
-The output pin can be changed.If you change output pin, change **PPM_READE_PIN** of define value in this program.
+The output pin can be changed.
+If you change output pin, change **PPM_READE_PIN** of define value in this program.
 
 
 **2. Confirm PPM signal specifications, UP pulse or DOWN pulse.**
+
 The PPM signal has the following two patterns, so Confirm one of them.
 
 ![pulse_type](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/pulse_type.png)
@@ -59,9 +61,9 @@ to ESP8266 board, you can confirm pulse type on serial plotter.
 If you confirm ppm pulse type, change **TYPE_OF_PULSE_IS_RISING** of define value in this program.
 
 
-**3.Write this code on the ESP8266 board with Arduino IDE.**
+**3. Write this code on the ESP8266 board with Arduino IDE.**
 
-**4.If you turn on the power of the ESP8266 board, PPM value will be displayed on serial monitor.**
+**4. If you turn on the power of the ESP8266 board, PPM value will be displayed on serial monitor.**
 
 # Licence
 [MIT](https://github.com/shiguregaki/sample/blob/master/LICENSE)
@@ -111,14 +113,14 @@ Arduino IDEのデフォルト設定では、ESP8266ボードはサポートされていません。
 [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
 
 # 使い方
-**1.以下のように回路を組みます。**
+**1. 以下のように回路を組みます。**
 
 ![wiring_diagram](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/docs/wiring_diagram.png)
 
 outputのピンは変更可能です。プログラム内の**PPM_READE_PIN**の定義値を変更してください。
 
 
-**2.PPM信号の仕様を確認(UP pulse, DOWN pulse)**
+**2. PPM信号の仕様を確認(UP pulse, DOWN pulse)**
 
 PPM信号には以下の2パターンがあるので、どちらかを確認します。
 
@@ -130,9 +132,9 @@ PPM信号には以下の2パターンがあるので、どちらかを確認します。
 PPM信号の種類が分かったら、プログラム内の**TYPE_OF_PULSE_IS_RISING**の定義値を変更してください。
 
 
-**3.Arduino IDEでESP8266基板に本コードを書き込みます。**
+**3. Arduino IDEでESP8266基板に本コードを書き込みます。**
 
-**4.ESP8266基板の電源を入れれば、シリアルモニタでPPM値が表示されます。**
+**4. ESP8266基板の電源を入れれば、シリアルモニタでPPM値が表示されます。**
 
 # ライセンス
 [MIT](https://github.com/shiguregaki/sample/blob/master/LICENSE)
