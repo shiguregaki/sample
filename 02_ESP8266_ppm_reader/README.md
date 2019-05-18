@@ -69,9 +69,11 @@ If you confirm ppm pulse type, change **TYPE_OF_PULSE_IS_RISING** of define valu
 # Author
 [shiguregaki](https://github.com/shiguregaki)
 
- 
+  
 
- 
+  
+
+==========================================================================
 
 (“ú–{Œê”Å)
 
