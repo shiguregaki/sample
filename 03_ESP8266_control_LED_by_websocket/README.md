@@ -2,7 +2,7 @@ ESP8266_control_LED_by_websocket
 ====
 This code is a sample program to control the LED using WebSocket in arudino wifi module(ESP8266).
 
-![demo](https://github.com/shiguregaki/sample/blob/master/03_ESP8266_control_LED_by_websocket/docs/Capture_connect_AP.png)
+![demo](https://github.com/shiguregaki/sample/blob/master/03_ESP8266_control_LED_by_websocket/docs/led_control.gif)
 
 # Description
 I created this code for coding practice, becouse I would like to have checked about the process to control Arduino's output by using WebSocket.
@@ -55,7 +55,7 @@ It will automatically read / upload data from the source code directory.
 
 **4.ESP8266Šî”Â‚Ì“dŒ¹‚ğ“ü‚ê‚ÄAwifi‚Ìİ’è‚ğ‚µ‚Ü‚·B**
 
-In AP mode(default): 
+**In AP mode(default): **
 
 ESP8266 waits to connect ST-device.
 SSID name is "ESP8266 Access Point", and password is "esp8266-test".
@@ -66,7 +66,7 @@ If access is sucsess, the IP address of the access destination is output with "[
 ¦If you change "ssid" and "password" in the code, SSID name and password are changed to input value.
 
 
-In ST mode: 
+**In ST mode: **
 
 ESP8266 automatically connects to access point.
 If access is sucsess, the IP address of the access destination is output with "[info] Access destination IP address: XXXX" on serial monitor.
@@ -91,7 +91,7 @@ If access is sucsess, the IP address of the access destination is output with "[
 
 ‚±‚ÌƒR[ƒh‚Íarudino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅWebSocket‚ğg‚Á‚ÄLED‚ğƒRƒ“ƒgƒ[ƒ‹‚·‚éƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Å‚·B
 
-![demo](https://github.com/shiguregaki/sample/blob/master/03_ESP8266_control_LED_by_websocket/docs/Capture_connect_AP.png)
+![demo](https://github.com/shiguregaki/sample/blob/master/03_ESP8266_control_LED_by_websocket/docs/led_control.gif)
 
 # ŠT—v
 WebSocket‚ğg‚Á‚ÄArduino‘¤‚Ìo—Í‚ğ§Œä‚·‚éˆ—‚ÌƒR[ƒfƒBƒ“ƒO—ûK—p‚Éì¬‚µ‚Ü‚µ‚½B
@@ -143,7 +143,7 @@ Arduino ESP8266 filesystem uploader‚ğg‚¦‚ÎA©“®‚Åƒ\[ƒXƒR[ƒh‚ª‚ ‚éƒfƒBƒŒƒNƒgƒ
 
 **4.ESP8266Šî”Â‚Ì“dŒ¹‚ğ“ü‚ê‚ÄAwifi‚Ìİ’è‚ğ‚µ‚Ü‚·B**
 
-ƒAƒNƒZƒXƒ|ƒCƒ“ƒgƒ‚[ƒh‚Ìê‡(ƒfƒtƒHƒ‹ƒg)
+**ƒAƒNƒZƒXƒ|ƒCƒ“ƒgƒ‚[ƒh‚Ìê‡(ƒfƒtƒHƒ‹ƒg)**
 
 ƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚ÉƒXƒe[ƒVƒ‡ƒ“’[––‚ª‚Â‚È‚ª‚é‚Ì‚ğ‘Ò‚Á‚Ä‚¢‚Ü‚·B
 ƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚ÌSSID‚ÍuESP8266 Access PointvAƒpƒXƒ[ƒh‚Íuesp8266-testv‚Å‚·B
@@ -153,7 +153,7 @@ Arduino ESP8266 filesystem uploader‚ğg‚¦‚ÎA©“®‚Åƒ\[ƒXƒR[ƒh‚ª‚ ‚éƒfƒBƒŒƒNƒgƒ
 
 ¦‚à‚µAƒR[ƒh‚Ìssid‚Æpassword‚ğ•Ï‚¦‚Ä‚¢‚½‚çA‚»‚Ì’l‚É•Ï‚í‚Á‚Ä‚¢‚Ü‚·B
 
-ƒXƒe[ƒVƒ‡ƒ“ƒ‚[ƒh‚Ìê‡
+**ƒXƒe[ƒVƒ‡ƒ“ƒ‚[ƒh‚Ìê‡**
 
 ©“®‚ÅƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚ÉÚ‘±‚µ‚Ü‚·B
 ƒVƒŠƒAƒ‹ƒ‚ƒjƒ^‚Å‚ÍÚ‘±‚ª¬Œ÷‚·‚ê‚ÎAˆÈ‰º‚Ì‚æ‚¤‚Éu[info] Access destination IP address: XXXXv‚Ì‚æ‚¤‚ÉƒAƒNƒZƒXæ‚ÌIPƒAƒhƒŒƒX‚ªo—Í‚³‚ê‚Ü‚·B
