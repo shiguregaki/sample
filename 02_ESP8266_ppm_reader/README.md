@@ -137,7 +137,7 @@ PPM信号の種類が分かったら、プログラム内の**TYPE_OF_PULSE_IS_RISING**の定義値を変
 **4. ESP8266基板の電源を入れれば、シリアルモニタでPPM値が表示されます。**
 
 # ライセンス
-[MIT](https://github.com/shiguregaki/sample/blob/master/LICENSE)
+[MIT](https://github.com/shiguregaki/sample/blob/master/02_ESP8266_ppm_reader/LICENSE)
 
 # 作成者
 [shiguregaki](https://github.com/shiguregaki)

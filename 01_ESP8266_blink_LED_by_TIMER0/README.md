@@ -87,7 +87,7 @@ Arduino IDEのデフォルト設定では、ESP8266ボードはサポートされていません。
 **3.ESP8266基板の電源を入れれば、自動でLEDがチカチカします。**
 
 # ライセンス
-[MIT](https://github.com/shiguregaki/sample/blob/master/LICENSE)
+[MIT](https://github.com/shiguregaki/sample/blob/master/01_ESP8266_blink_LED_by_TIMER0/LICENSE)
 
 # 作成者
 [shiguregaki](https://github.com/shiguregaki)
