@@ -119,12 +119,9 @@ void handleRoot(){
 bool handleFileRead(String path) {
   Serial.println("[info] handleFileRead: " + path);
   if (path.endsWith("/")) path += "index.html";
-  String pathWithGz = path + ".gz";
-  if (SPIFFS.exists(pathWithGz) || SPIFFS.exists(path)) {
-    if (SPIFFS.exists(pathWithGz)){
-      path = pathWithGz;
-    }
-    File file = SPIFFS.open(path, "r");
+  if (existFile(path)) {
+    String filepath = getFilePath(path);
+    File file = SPIFFS.open(filepath, "r");
     size_t sent = server.streamFile(file, getContentType(path));
     file.close();
     Serial.println(String("\tSent file: ") + path);
@@ -171,10 +168,33 @@ String formatBytes(size_t bytes) {
 
 /* Return the filetype from filename. */
 String getContentType(String filename) {
-  if (filename.endsWith(".html")) return "text/html";
-  else if (filename.endsWith(".css")) return "text/css";
-  else if (filename.endsWith(".js")) return "application/javascript";
-  else if (filename.endsWith(".ico")) return "image/x-icon";
-  else if (filename.endsWith(".gz")) return "application/x-gzip";
+  if(server.hasArg("download")) return "application/octet-stream";
+  else if(filename.endsWith(".htm")) return "text/html";
+  else if(filename.endsWith(".html")) return "text/html";
+  else if(filename.endsWith(".css")) return "text/css";
+  else if(filename.endsWith(".js")) return "application/javascript";
+  else if(filename.endsWith(".png")) return "image/png";
+  else if(filename.endsWith(".gif")) return "image/gif";
+  else if(filename.endsWith(".jpg")) return "image/jpeg";
+  else if(filename.endsWith(".ico")) return "image/x-icon";
+  else if(filename.endsWith(".xml")) return "text/xml";
+  else if(filename.endsWith(".pdf")) return "application/x-pdf";
+  else if(filename.endsWith(".zip")) return "application/x-zip";
+  else if(filename.endsWith(".gz")) return "application/x-gzip";
   return "text/plain";
+}
+
+/* Return boolean whether file exists. */
+boolean existFile(String path) {
+  String pathWithGz = path + ".gz";
+  if(SPIFFS.exists(pathWithGz) || SPIFFS.exists(path)) return true;
+  return false;
+}
+
+/* Return the suitable file path.
+   If compressed file exists, return preferentially its filepath.*/
+String getFilePath(String path) {
+  String pathWithGz = path + ".gz";
+  if(SPIFFS.exists(pathWithGz)) return pathWithGz;
+  return path;
 }
