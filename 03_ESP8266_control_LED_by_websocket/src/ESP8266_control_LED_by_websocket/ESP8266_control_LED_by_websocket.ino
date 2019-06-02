@@ -185,7 +185,7 @@ String getContentType(String filename) {
 }
 
 /* Return boolean whether file exists. */
-boolean existFile(String path) {
+bool existFile(String path) {
   String pathWithGz = path + ".gz";
   if(SPIFFS.exists(pathWithGz) || SPIFFS.exists(path)) return true;
   return false;
