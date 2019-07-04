@@ -1,6 +1,6 @@
 
 /* Set these parameters to your environment. */
-#define CPU_MHZ 80
+#define CPU_MHZ 160
 #define blinkInterval 1 //set interval time to blink LED (seconds)
 #define ledPin 5 //set LED signal output pin on the arduino
 
