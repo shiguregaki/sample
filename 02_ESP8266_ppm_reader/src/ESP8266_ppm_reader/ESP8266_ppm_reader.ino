@@ -1,10 +1,10 @@
 
 /* Set these parameters to your environment. */
+#define CPU_MHZ                                 160         // set cpu frequency(MHz)
 #define PPM_READE_PIN                           5           // set PPM signal input pin on the arduino
 #define TYPE_OF_PULSE_IS_RISING                 false       // true is RISING(UP pulse), false is FALLING(DOWN pulse)
 
 /* system parameter */
-#define CPU_MHZ                                 80          // set cpu frequency(MHz)
 #define PPM_IN_MIN_SYNC_PULSE_INTERVAL_US       2700        // set the pulse interval for sync(microseconds)
 #define PPM_IN_MIN_CHANNEL_PULSE_INTERVAL_US    750         // set the min pluse interval for ch(microseconds)
 #define PPM_IN_MAX_CHANNEL_PULSE_INTERVAL_US    2250        // set the max pluse interval for ch(microseconds)
