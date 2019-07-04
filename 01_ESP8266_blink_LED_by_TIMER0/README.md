@@ -3,7 +3,7 @@ ESP8266_blink_LED_by_TIMER0
 
 This code blinks LED by TIMER0 interrupt on arudino wifi module(ESP8266).
 
-![demo](/docs/led_blinking.gif)
+![demo](/01_ESP8266_blink_LED_by_TIMER0/docs/led_blinking.gif)
 
 # Description
 I created this code for coding practice, becouse I would like to have checked about TIMER0 interrupt on arudino wifi module(ESP8266).
@@ -40,7 +40,7 @@ Therefore, it is necessary to import **ESP8266 core for Arduino** into Arduino I
 # Usage
 ### 1.Build the circuit as the fllowing figure.
 
-![circuit_diagram](/docs/circuit_diagram_frizing.PNG)
+![circuit_diagram](/01_ESP8266_blink_LED_by_TIMER0/docs/circuit_diagram_frizing.PNG)
 
 ### 2.Install "Required software" in Arduino IDE.
 "Required software" is [link](#required-software).
@@ -59,7 +59,7 @@ The parameters are below. Please change as appropriate for your environment.
 ### 4.If you turn on the power of the ESP8266 board, the LED will blink automatically.
 
 # Licence
-[MIT](/LICENSE)
+[MIT](/01_ESP8266_blink_LED_by_TIMER0/LICENSE)
 
 # Author
 [shiguregaki](https://github.com/shiguregaki)
@@ -72,7 +72,7 @@ Japanese
 
 このコードはarudino wifiモジュールのESP8266でLEDチカをTIMER0割り込みで実行するものです。
 
-![demo](/docs/led_blinking.gif)
+![demo](/01_ESP8266_blink_LED_by_TIMER0/docs/led_blinking.gif)
 
 # 概要
 arudino wifiモジュールのESP8266でTIMER0割り込みのコーディング練習用に作成しました。
@@ -110,7 +110,7 @@ Arduino IDEのデフォルト設定では、ESP8266ボードはサポートされていません。
 # 使い方
 ### 1.以下のように回路を組みます。
 
-![circuit_diagram](/docs/circuit_diagram_frizing.PNG)
+![circuit_diagram](/01_ESP8266_blink_LED_by_TIMER0/docs/circuit_diagram_frizing.PNG)
 
 ### 2.Arduino IDEに"インストールが必要なソフトウェア"をインストールします。
 インストールが必要なソフトウェアは[こちら](#インストールが必要なソフトウェア)
@@ -129,7 +129,7 @@ Arduino IDEのデフォルト設定では、ESP8266ボードはサポートされていません。
 ### 4.ESP8266基板の電源を入れれば、自動でLEDがチカチカします。
 
 # ライセンス
-[MIT](/LICENSE)
+[MIT](/01_ESP8266_blink_LED_by_TIMER0/LICENSE)
 
 # 作成者
 [shiguregaki](https://github.com/shiguregaki)
