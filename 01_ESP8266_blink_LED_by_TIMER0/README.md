@@ -21,6 +21,8 @@ If purchased in Japan, it works on the following boards:
 
 | Parts | MPN | Num |
 |:---|:---|:---|
+|5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
+|120ƒ¶ resistor |- |1 |
 |Bread board |- |1 |
 |Jumper cord(male-female) |- |4 |
 
@@ -91,7 +93,7 @@ arudino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅTIMER0Š„‚è‚İ‚ÌƒR[ƒfƒBƒ“ƒO—ûK—p‚Éì¬‚µ‚Ü‚µ‚
 | •”•i | Œ^”Ô | ŒÂ” |
 |:---|:---|:---|
 |5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
-|120?’ïR |- |1 |
+|120ƒ¶’ïR |- |1 |
 |ƒuƒŒƒbƒhƒ{[ƒh |- |1 |
 |ƒWƒƒƒ“ƒp[ƒsƒ“(ƒIƒX-ƒƒX) |- |2 |
 
