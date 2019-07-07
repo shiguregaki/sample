@@ -24,7 +24,7 @@ If purchased in Japan, it works on the following boards:
 |5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
 |120ƒ¶ resistor |- |1 |
 |Bread board |- |1 |
-|Jumper cord(male-female) |- |4 |
+|Jumper cord(male-female) |- |2 |
 
 ## Required software
 The following software are required to be installed.
