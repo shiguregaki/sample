@@ -1,14 +1,14 @@
 ESP8266_ppm_reader
 ---
 
-This code is to read PPM signal value on arudino wifi module(ESP8266).
+This code is to read PPM signal value on Arduino wifi module(ESP8266).
 PPM value is displayed on Arduino IDE serial monitor.
 
 ![description](/02_ESP8266_ppm_reader/docs/description.png)
 
 # Description
 I created this code for coding practice, because I would like to have read PPM value, 
-which it is known in RC industry, on arudino wifi module(ESP8266).
+which it is known in RC industry, on Arduino wifi module(ESP8266).
 
 # Requirement
 ## Required device
@@ -22,7 +22,7 @@ For example:
 - [2.4G 8CH D8 Mini FrSky Compatible Receiver With PWM PPM SBUS Output](https://www.banggood.com/2_4G-8CH-D8-Mini-FrSky-Compatibel-Receiver-With-PWM-PPM-SBUS-Output-p-1140478.html?rmmds=search&cur_warehouse=CN)
 - [2.4g 8ch D8 Mini Frsky Compatible Receiver with Pwm Ppm Output Compatible with Frsky Sbus X9d (Plus) Djt Dft Dht 8 IBUS 10 PPM](https://www.amazon.com/2-4g-Frsky-Compatible-Receiver-Output/dp/B07PVL1S6H/ref=sr_1_fkmr0_1?keywords=2.4G+8CH+D8+Mini+FrSky&qid=1558046692&s=gateway&sr=8-1-fkmr0)
 
-### arudino wifi module(ESP8266)
+### Arduino wifi module(ESP8266)
 If purchased in Japan, it works on the following boards:
 
 - [電子太郎 ESP-WROOM-02開発ボード 2.4 GHz Wi-Fiモジュール MicroUSB](https://www.amazon.co.jp/gp/product/B071DY11SB/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B071DY11SB&linkCode=as2&tag=shiguregaki02-22&linkId=131ae4b9a00ef3b7517980a81ed41d91)  
@@ -94,13 +94,13 @@ The parameters are below. Please change as appropriate for your environment.
 Japanese
 ---
 
-このコードはarudino wifiモジュールのESP8266でPPM値を読み取るためのものです。
+このコードはArduino wifiモジュールのESP8266でPPM値を読み取るためのものです。
 PPM値の表示はArduinoのシリアルモニタで行います。
 
 ![description](/02_ESP8266_ppm_reader/docs/description.png)
 
 # 概要
-arudino wifiモジュールのESP8266でラジコン業界でよく使われるPPM値を読みたいと思い、
+Arduino wifiモジュールのESP8266でラジコン業界でよく使われるPPM値を読みたいと思い、
 このコードを作成しました。
 
 # 必要なこと
@@ -110,7 +110,7 @@ PPMを発生させるデバイスはたくさんあると思います。
 私は、[FrSky 8CH PWM PPM SBUS Micro Receiver](http://helimonster.jp/?pid=116238271)を使用しました。
 これは受信機なので、別途送信機(FrSky DHT DFT DJTなど)が必要となります。
 
-### arudino wifi module(ESP8266)
+### Arduino wifi module(ESP8266)
 日本では以下のボードで動作すると思います。
 
 - [電子太郎 ESP-WROOM-02開発ボード 2.4 GHz Wi-Fiモジュール MicroUSB](https://www.amazon.co.jp/gp/product/B071DY11SB/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B071DY11SB&linkCode=as2&tag=shiguregaki02-22&linkId=131ae4b9a00ef3b7517980a81ed41d91)  
