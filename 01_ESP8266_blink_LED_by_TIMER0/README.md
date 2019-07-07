@@ -24,7 +24,7 @@ If purchased in Japan, it works on the following boards:
 |5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
 |120ƒ¶ resistor |- |1 |
 |Bread board |- |1 |
-|Jumper cord(male-female) |- |2 |
+|Jumper cord(male-female) |- |3 |
 
 ## Required software
 The following software are required to be installed.
@@ -95,7 +95,7 @@ Arduino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅTIMER0Š„‚è‚İ‚ÌƒR[ƒfƒBƒ“ƒO—ûK—p‚Éì¬‚µ‚Ü‚µ‚
 |5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
 |120ƒ¶’ïR |- |1 |
 |ƒuƒŒƒbƒhƒ{[ƒh |- |1 |
-|ƒWƒƒƒ“ƒp[ƒsƒ“(ƒIƒX-ƒƒX) |- |2 |
+|ƒWƒƒƒ“ƒp[ƒsƒ“(ƒIƒX-ƒƒX) |- |3 |
 
 ## ƒCƒ“ƒXƒg[ƒ‹‚ª•K—v‚Èƒ\ƒtƒgƒEƒFƒA
 ### Arduino IDE
