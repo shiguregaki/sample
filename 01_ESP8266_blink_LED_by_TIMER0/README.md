@@ -1,16 +1,16 @@
 ESP8266_blink_LED_by_TIMER0
 ---
 
-This code blinks LED by TIMER0 interrupt on arudino wifi module(ESP8266).
+This code blinks LED by TIMER0 interrupt on Arduino wifi module(ESP8266).
 
 ![demo](/01_ESP8266_blink_LED_by_TIMER0/docs/led_blinking.gif)
 
 # Description
-I created this code for coding practice, becouse I would like to have checked about TIMER0 interrupt on arudino wifi module(ESP8266).
+I created this code for coding practice, becouse I would like to have checked about TIMER0 interrupt on Arduino wifi module(ESP8266).
 
 # Requirement
 ## Required device
-### arudino wifi module(ESP8266)
+### Arduino wifi module(ESP8266)
 If purchased in Japan, it works on the following boards:
 
 - [電子太郎 ESP-WROOM-02開発ボード 2.4 GHz Wi-Fiモジュール MicroUSB](https://www.amazon.co.jp/gp/product/B071DY11SB/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B071DY11SB&linkCode=as2&tag=shiguregaki02-22&linkId=131ae4b9a00ef3b7517980a81ed41d91)  
@@ -72,16 +72,16 @@ The parameters are below. Please change as appropriate for your environment.
 Japanese
 ---
 
-このコードはarudino wifiモジュールのESP8266でLEDチカをTIMER0割り込みで実行するものです。
+このコードはArduino wifiモジュールのESP8266でLEDチカをTIMER0割り込みで実行するものです。
 
 ![demo](/01_ESP8266_blink_LED_by_TIMER0/docs/led_blinking.gif)
 
 # 概要
-arudino wifiモジュールのESP8266でTIMER0割り込みのコーディング練習用に作成しました。
+Arduino wifiモジュールのESP8266でTIMER0割り込みのコーディング練習用に作成しました。
 
 # 必要なこと
 ## 必要なデバイス
-### arudino wifi module(ESP8266)
+### Arduino wifi module(ESP8266)
 日本での購入なら、以下のボード上で動作します。
 
 - [電子太郎 ESP-WROOM-02開発ボード 2.4 GHz Wi-Fiモジュール MicroUSB](https://www.amazon.co.jp/gp/product/B071DY11SB/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B071DY11SB&linkCode=as2&tag=shiguregaki02-22&linkId=131ae4b9a00ef3b7517980a81ed41d91)  
