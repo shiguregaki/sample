@@ -1,12 +1,12 @@
-ESP8266_blink_LED_by_TIMER0
+ESP8266_control_LED_by_websocket
 ---
 
-This code blinks LED by TIMER0 interrupt on Arduino wifi module(ESP8266).
+This code is a sample program to control the LED using WebSocket in Arduino wifi module(ESP8266).
 
-![demo](/01_ESP8266_blink_LED_by_TIMER0/docs/led_blinking.gif)
+![demo](/03_ESP8266_control_LED_by_websocket/docs/led_control.gif)
 
 # Description
-I created this code for coding practice, becouse I would like to have checked about TIMER0 interrupt on Arduino wifi module(ESP8266).
+I created this code for coding practice, becouse I would like to have checked about the process to control Arduino's output by using WebSocket.
 
 # Requirement
 ## Required device
@@ -24,10 +24,11 @@ If purchased in Japan, it works on the following boards:
 |5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
 |120ƒ¶ resistor |- |1 |
 |Bread board |- |1 |
-|Jumper cord(male-female) |- |3 |
+|Jumper cord(male-female) |- |2 |
 
 ## Required software
 The following software are required to be installed.
+
 ### Arduino IDE
 Install Arduino IDE on your development PC.
 
@@ -39,45 +40,99 @@ Therefore, it is necessary to import **ESP8266 core for Arduino** into Arduino I
 
 [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
 
-# Usage
-### 1.Build the circuit as the fllowing figure.
+### (tool) Arduino ESP8266 filesystem uploader
+It is file updater for Arduino ESP8266.
+You can download it following URL link.
 
-![circuit_diagram](/01_ESP8266_blink_LED_by_TIMER0/docs/circuit_diagram_frizing.PNG)
+[Arduino ESP8266 filesystem uploader](https://github.com/esp8266/arduino-esp8266fs-plugin)
+
+### (library) Links2004/arduinoWebSockets
+WebSocket library for Arduino.
+You can download it following URL link.
+
+[Links2004/arduinoWebSockets](https://github.com/Links2004/arduinoWebSockets)
+
+# Usage
+### 1.Build the connection as the fllowing figure.
+
+![connection_diagram](/03_ESP8266_control_LED_by_websocket/docs/connection_diagram.jpg)
 
 ### 2.Install "Required software" in Arduino IDE.
 "Required software" is [link](#required-software).
 
 ### 3.Write this code on the ESP8266 board with Arduino IDE.
-The code to write is "ESP8266_blink_LED_by_TIMER0.ino".
+The code to write is "ESP8266_control_LED_by_websocket.ino".
+
+This code supports the access point mode (AP mode) and the station mode (ST mode) as the operation of ESP8266.
+The default is AP mode.
+
+If you want to use in ST mode, put your access point information in "myssid" and "mypasswaord" in the code.
+If you want to change output pin, change LED_PIN of define value in this program.
 
 The parameters are below. Please change as appropriate for your environment.
 
 | Parameters | Description | Default value |
 |:---|:---|:---|
-|CPU_MHZ |ESP8266 CPU frequency.  Please change as appropriate for your environment. |160 |
-|blinkInterval |The interval time to blink LED (seconds). |1 |
-|ledPin |The LED signal output pin on the arduino. |5 |
+|ssid |The name of SSID in case used AP-Mode. |"ESP8266 Access Point" |
+|password |The password in case used AP-Mode. |"esp8266-test" |
+|myssid |The name of SSID in case used ST-Mode.  Please change as appropriate for your environment. |"The ssid name of your AP" |
+|mypassword |The password in case used ST-Mode.  Please change as appropriate for your environment. |"The password of your AP" |
+|LED_PIN|The LED signal output pin on the arduino. |15 |
 
-### 4.If you turn on the power of the ESP8266 board, the LED will blink automatically.
+### 4.Uploade files for webserver to ESP8266.
+Use the Arduino ESP8266 filesystem uploader.
+It will automatically read / upload data from the source code directory.
+
+The files to upload is below.
+
+| File | Description |
+|:---|:---|
+|index.html.gz |Specify the screen when accessing HTML |
+|main.css.gz |Specify screen design |
+|WebSocket.js.gz |Specify the client operation of WebSocket |
+
+All files are compressed with ".gz" to reduce file size.
+The code is written to work without compression.
+
+### 5.Turn on the ESP8266 board and configure the wifi settings.
+
+#### In AP-Mode(default): 
+ESP8266 waits to connect ST-device.
+SSID name is "ESP8266 Access Point", and password is "esp8266-test".
+If access is sucsess, the IP address of the access destination is output with "[info] Access destination IP address: XXXX" on serial monitor.
+
+![Capture_connect_AP](/03_ESP8266_control_LED_by_websocket/docs/Capture_connect_AP.png)
+
+¦If you change "ssid" and "password" in the code, SSID name and password are changed to input value.
+
+#### In ST-Mode: 
+ESP8266 automatically connects to access point.
+If access is sucsess, the IP address of the access destination is output with "[info] Access destination IP address: XXXX" on serial monitor.
+
+![Capture_connect_ST](/03_ESP8266_control_LED_by_websocket/docs/Capture_connect_ST.png)
+
+¦Because the ESP 8266 only supports 11b/g/n, the access point to connect needs to be connected to the 2.4 GHz band.
+
+### 6.Access the IP address of the access destination from the browser of the cliebt terminal.
+If you input the IP address of the access destination in browser search form, you will control LED.
 
 # Licence
-[MIT](/01_ESP8266_blink_LED_by_TIMER0/LICENSE)
+[MIT](/03_ESP8266_control_LED_by_websocket/LICENSE)
 
 # Author
 [shiguregaki](https://github.com/shiguregaki)
-
 
 ---
 
 Japanese
 ---
 
-‚±‚ÌƒR[ƒh‚ÍArduino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅLEDƒ`ƒJ‚ğTIMER0Š„‚è‚İ‚ÅÀs‚·‚é‚à‚Ì‚Å‚·B
+‚±‚ÌƒR[ƒh‚ÍArduino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅWebSocket‚ğg‚Á‚ÄLED‚ğƒRƒ“ƒgƒ[ƒ‹‚·‚éƒTƒ“ƒvƒ‹ƒvƒƒOƒ‰ƒ€‚Å‚·B
 
-![demo](/01_ESP8266_blink_LED_by_TIMER0/docs/led_blinking.gif)
+![demo](/03_ESP8266_control_LED_by_websocket/docs/led_control.gif)
 
 # ŠT—v
-Arduino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅTIMER0Š„‚è‚İ‚ÌƒR[ƒfƒBƒ“ƒO—ûK—p‚Éì¬‚µ‚Ü‚µ‚½B
+WebSocket‚ğg‚Á‚ÄArduino‘¤‚Ìo—Í‚ğ§Œä‚·‚éˆ—‚ÌƒR[ƒfƒBƒ“ƒO—ûK—p‚Éì¬‚µ‚Ü‚µ‚½B
 
 # •K—v‚È‚±‚Æ
 ## •K—v‚ÈƒfƒoƒCƒX
@@ -88,14 +143,16 @@ Arduino wifiƒ‚ƒWƒ…[ƒ‹‚ÌESP8266‚ÅTIMER0Š„‚è‚İ‚ÌƒR[ƒfƒBƒ“ƒO—ûK—p‚Éì¬‚µ‚Ü‚µ‚
 - [‚d‚r‚o|‚v‚q‚n‚n‚l|‚O‚QŠJ”­ƒ{[ƒh](http://akizukidenshi.com/catalog/g/gK-12236/)
 - [ESPr DeveloperiESP-WROOM-02ŠJ”­ƒ{[ƒhj](https://www.switch-science.com/catalog/2500/)
 
-### ‚»‚Ì‘¼‚Ì•”•i
+### ‚»‚Ì‘¼•”•i
 
 | •”•i | Œ^”Ô | ŒÂ” |
 |:---|:---|:---|
 |5mm Deluxe Power Red LED  |OSR5CA5B61P |1 |
 |120ƒ¶’ïR |- |1 |
 |ƒuƒŒƒbƒhƒ{[ƒh |- |1 |
-|ƒWƒƒƒ“ƒp[ƒsƒ“(ƒIƒX-ƒƒX) |- |3 |
+|ƒWƒƒƒ“ƒp[ƒsƒ“(ƒIƒX-ƒƒX) |- |2 |
+
+
 
 ## ƒCƒ“ƒXƒg[ƒ‹‚ª•K—v‚Èƒ\ƒtƒgƒEƒFƒA
 ### Arduino IDE
@@ -109,29 +166,82 @@ Arduino IDE‚ÌƒfƒtƒHƒ‹ƒgİ’è‚Å‚ÍAESP8266ƒ{[ƒh‚ÍƒTƒ|[ƒg‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
 
 [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
 
+### (tool) Arduino ESP8266 filesystem uploader
+Arduino ESP8266—p‚Ìƒtƒ@ƒCƒ‹ƒAƒbƒvƒ[ƒ_[‚Å‚·B
+ˆÈ‰º‚ÌƒTƒCƒg‚©‚çƒ_ƒEƒ“ƒ[ƒh‚Å‚«‚Ü‚·B
+
+[Arduino ESP8266 filesystem uploader](https://github.com/esp8266/arduino-esp8266fs-plugin)
+
+### (library) Links2004/arduinoWebSockets
+ArduinoŒü‚¯‚ÌWebSocketƒ‰ƒCƒuƒ‰ƒŠ[‚Å‚·B
+ˆÈ‰º‚ÌƒTƒCƒg‚©‚çƒ_ƒEƒ“ƒ[ƒh‚Å‚«‚Ü‚·B
+
+[Links2004/arduinoWebSockets](https://github.com/Links2004/arduinoWebSockets)
+
 # g‚¢•û
 ### 1.ˆÈ‰º‚Ì‚æ‚¤‚É‰ñ˜H‚ğ‘g‚İ‚Ü‚·B
 
-![circuit_diagram](/01_ESP8266_blink_LED_by_TIMER0/docs/circuit_diagram_frizing.PNG)
+![connection_diagram](/03_ESP8266_control_LED_by_websocket/docs/connection_diagram.jpg)
 
 ### 2.Arduino IDE‚É"ƒCƒ“ƒXƒg[ƒ‹‚ª•K—v‚Èƒ\ƒtƒgƒEƒFƒA"‚ğƒCƒ“ƒXƒg[ƒ‹‚µ‚Ü‚·B
 ƒCƒ“ƒXƒg[ƒ‹‚ª•K—v‚Èƒ\ƒtƒgƒEƒFƒA‚Í[‚±‚¿‚ç](#ƒCƒ“ƒXƒg[ƒ‹‚ª•K—v‚Èƒ\ƒtƒgƒEƒFƒA)
 
 ### 3.Arduino IDE‚ÅESP8266Šî”Â‚É–{ƒR[ƒh‚ğ‘‚«‚İ‚Ü‚·B
-‘‚«‚ŞƒR[ƒh‚ÍuESP8266_blink_LED_by_TIMER0.inov‚Å‚·B
+‘‚«‚ŞƒR[ƒh‚ÍuESP8266_control_LED_by_websocket.inov‚Å‚·B
+
+‚±‚ÌƒR[ƒh‚ÍESP8266‚Ì“®ì‚Æ‚µ‚ÄAƒAƒNƒZƒXƒ|ƒCƒ“ƒgƒ‚[ƒh‚ÆƒXƒe[ƒVƒ‡ƒ“ƒ‚[ƒh‚ğƒTƒ|[ƒg‚µ‚Ä‚¢‚Ü‚·B
+ƒfƒtƒHƒ‹ƒg‚Å‚ÍƒAƒNƒZƒXƒ|ƒCƒ“ƒgƒ‚[ƒh‚Æ‚È‚è‚Ü‚·B
+ƒXƒe[ƒVƒ‡ƒ“ƒ‚[ƒh‚Åg—p‚µ‚½‚¢ê‡‚ÍAƒR[ƒh“à‚É‚ ‚é"myssid"‚Æ"mypassword"‚É‚²©•ª‚ÌƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚Ìî•ñ‚ğ“ü‚ê‚Ä‚­‚¾‚³‚¢B
+‚Ü‚½A‚à‚µAo—Í‚·‚éƒsƒ“‚ğ•Ï‚¦‚½‚¢ê‡‚ÍALED_PIN‚Ì’è‹`’l‚ğ•ÏX‚µ‚Ä‚­‚¾‚³‚¢B
 
 ƒpƒ‰ƒ[ƒ^‚ÍˆÈ‰º‚Å‚·B‚²©•ª‚ÌŠÂ‹«‚É‡‚í‚¹‚Ä“K‹X•ÏX‚µ‚Ä‚­‚¾‚³‚¢B
 
 | ƒpƒ‰ƒ[ƒ^ | à–¾ | ƒfƒtƒHƒ‹ƒg’l |
 |:---|:---|:---|
-|CPU_MHZ |ESP8266‚ÌCPUü”g”B‚²©•ª‚ÌŠÂ‹«‚É‡‚í‚¹‚Äİ’è‚µ‚Ä‚­‚¾‚³‚¢B |160 |
-|blinkInterval |LED‚ğŒõ‚ç‚¹‚éŠÔŠu(’PˆÊ:•b) |1 |
-|ledPin |LED‚ÆÚ‘±‚·‚éESP8266‘¤‚ÌGPIOƒsƒ“”Ô† |5 |
+|ssid |AP-Mode‚Åg‚¤ê‡‚ÌAP‚ÌSSID |"ESP8266 Access Point" |
+|password |AP-Mode‚Åg‚¤ê‡‚ÌAP‚ÌƒpƒXƒ[ƒh |"esp8266-test" |
+|myssid |ST-Mode‚Åg‚¤ê‡‚ÌAP‚ÌSSIDB‚²©•ª‚ÌŠÂ‹«‚É‡‚í‚¹‚Äİ’è‚µ‚Ä‚­‚¾‚³‚¢B |"The ssid name of your AP" |
+|mypassword |ST-Mode‚Åg‚¤ê‡‚ÌAP‚ÌƒpƒXƒ[ƒhB‚²©•ª‚ÌŠÂ‹«‚É‡‚í‚¹‚Äİ’è‚µ‚Ä‚­‚¾‚³‚¢B |"The password of your AP" |
+|LED_PIN|LED‚ÆÚ‘±‚·‚éESP8266‘¤‚ÌGPIOƒsƒ“”Ô† |15 |
 
-### 4.ESP8266Šî”Â‚Ì“dŒ¹‚ğ“ü‚ê‚ê‚ÎA©“®‚ÅLED‚ªƒ`ƒJƒ`ƒJ‚µ‚Ü‚·B
+### 4.ESP8266Šî”Â‚ÉWebƒT[ƒo—pƒtƒ@ƒCƒ‹‚ğƒAƒbƒvƒ[ƒh‚µ‚Ü‚·B
+
+Arduino ESP8266 filesystem uploader‚ğg‚¦‚ÎA©“®‚Åƒ\[ƒXƒR[ƒh‚ª‚ ‚éƒfƒBƒŒƒNƒgƒŠ“à‚É‚ ‚é/data‚ğ“Ç‚İæ‚èAƒAƒbƒvƒ[ƒh‚µ‚Ä‚­‚ê‚Ü‚·B
+
+ƒAƒbƒvƒ[ƒh‚·‚éƒR[ƒh‚ÍˆÈ‰º‚Å‚·B
+
+| –¼Ì | à–¾ |
+|:---|:---|
+|index.html.gz |HTMLƒAƒNƒZƒX‚µ‚½‚Æ‚«‚Ì‰æ–Ê‚ğw’è |
+|main.css.gz |‰æ–ÊƒfƒUƒCƒ“‚ğw’è |
+|WebSocket.js.gz |WebSoket‚ÌƒNƒ‰ƒCƒAƒ“ƒg‘¤‚Ì“®ì‚ğw’è |
+
+ƒtƒ@ƒCƒ‹ƒTƒCƒY‚ğ¬‚³‚­‚·‚é‚½‚ß‚ÉA‘Sƒtƒ@ƒCƒ‹‚ğ".gz"‚Åˆ³k‚µ‚Ä‚¢‚Ü‚·B
+ˆ³k‚µ‚È‚­‚Ä‚à“®‚­‚æ‚¤‚ÉƒR[ƒh‚Í‘‚¢‚Ä‚¢‚Ü‚·B
+
+### 5.ESP8266Šî”Â‚Ì“dŒ¹‚ğ“ü‚ê‚ÄAwifi‚Ìİ’è‚ğ‚µ‚Ü‚·B
+#### AP-Mode‚Ìê‡(ƒfƒtƒHƒ‹ƒg):
+ƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚ÉƒXƒe[ƒVƒ‡ƒ“’[––‚ª‚Â‚È‚ª‚é‚Ì‚ğ‘Ò‚Á‚Ä‚¢‚Ü‚·B
+ƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚ÌSSID‚ÍuESP8266 Access PointvAƒpƒXƒ[ƒh‚Íuesp8266-testv‚Å‚·B
+ƒVƒŠƒAƒ‹ƒ‚ƒjƒ^‚Å‚ÍÚ‘±‚ª¬Œ÷‚·‚ê‚ÎAˆÈ‰º‚Ì‚æ‚¤‚Éu[info] Access destination IP address: XXXXv‚Ì‚æ‚¤‚ÉƒAƒNƒZƒXæ‚ÌIPƒAƒhƒŒƒX‚ªo—Í‚³‚ê‚Ü‚·B
+
+![Capture_connect_AP](/03_ESP8266_control_LED_by_websocket/docs/Capture_connect_AP.png)
+
+¦‚à‚µAƒR[ƒh‚Ìssid‚Æpassword‚ğ•Ï‚¦‚Ä‚¢‚½‚çA‚»‚Ì’l‚É•Ï‚í‚Á‚Ä‚¢‚Ü‚·B
+
+#### ST-Mode‚Ìê‡:
+©“®‚ÅƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚ÉÚ‘±‚µ‚Ü‚·B
+ƒVƒŠƒAƒ‹ƒ‚ƒjƒ^‚Å‚ÍÚ‘±‚ª¬Œ÷‚·‚ê‚ÎAˆÈ‰º‚Ì‚æ‚¤‚Éu[info] Access destination IP address: XXXXv‚Ì‚æ‚¤‚ÉƒAƒNƒZƒXæ‚ÌIPƒAƒhƒŒƒX‚ªo—Í‚³‚ê‚Ü‚·B
+
+![Capture_connect_ST](/03_ESP8266_control_LED_by_websocket/docs/Capture_connect_ST.png)
+
+¦ESP8266‚ª11b/g/n‚µ‚©ƒTƒ|[ƒg‚µ‚Ä‚¢‚È‚¢‚½‚ßAÚ‘±æ‚ÌƒAƒNƒZƒXƒ|ƒCƒ“ƒg‚Í2.4GHz‘Ñ‚Ì‚à‚Ì‚ÉÚ‘±‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+
+### 6.ƒNƒ‰ƒCƒAƒ“ƒg’[––‚Ìƒuƒ‰ƒEƒU‚©‚çƒAƒNƒZƒXæ‚ÌIPƒAƒhƒŒƒX‚ÉƒAƒNƒZƒX‚µ‚Ü‚·B
+ƒuƒ‰ƒEƒU‚ÌŒŸõƒtƒH[ƒ€‚Ì‚Æ‚±‚ë‚ÉAƒAƒNƒZƒXæ‚ÌIPƒAƒhƒŒƒX"X.X.X.X"‚ğ“ü—Í‚·‚ê‚ÎLED‚ğƒRƒ“ƒgƒ[ƒ‹‚·‚é‰æ–Ê‚ª•\¦‚³‚ê‚é‚Í‚¸‚Å‚·B
 
 # ƒ‰ƒCƒZƒ“ƒX
-[MIT](/01_ESP8266_blink_LED_by_TIMER0/LICENSE)
+[MIT](/03_ESP8266_control_LED_by_websocket/LICENSE)
 
 # ì¬Ò
 [shiguregaki](https://github.com/shiguregaki)
